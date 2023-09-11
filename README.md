@@ -1,0 +1,1 @@
+# teste-back-end-typeorm-NicePlanet-PedroH
