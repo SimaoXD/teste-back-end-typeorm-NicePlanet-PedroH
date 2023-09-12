@@ -1,23 +1,24 @@
 import { Repository } from "typeorm";
 import AppDataSource from "../database/data-source";
-import { Produtor } from "../entities";
-import { IProducerPublic, IProducerRegister } from "../interfaces/produtor.interfaces";
-import { producerDataPublicSchema, producerListPublicSchema } from "../schemas/produtor.schema";
+import { Propriedade } from "../entities";
 
-const requestCreateProducer = async (payload: IProducerRegister): Promise<IProducerPublic> => {
-  const producerRepository: Repository<Produtor> = AppDataSource.getRepository(Produtor);
-  const producer: Produtor = producerRepository.create({ ...payload });
-  const save = await producerRepository.save(producer);
-  const producerResponse: IProducerPublic = producerDataPublicSchema.parse(producer);
+import { propertyDataPublicSchema, propertyListPublicSchema } from "../schemas/propriedade.schema";
+import { IPropertyPublic, IPropertyRegister } from "../interfaces/propriedade.interfaces";
 
-  return producerResponse;
+const requestCreateproperty = async (payload: IPropertyRegister): Promise<IPropertyPublic> => {
+  const propertyRepository: Repository<Propriedade> = AppDataSource.getRepository(Propriedade);
+  const property: Propriedade = propertyRepository.create({ ...payload });
+  const save = await propertyRepository.save(property);
+  const propertyResponse: IPropertyPublic = propertyDataPublicSchema.parse(property);
+
+  return propertyResponse;
 };
 
-const requestReadProducersList = async (): Promise<IProducerPublic[]> => {
-  const producerRepo: Repository<Produtor> = AppDataSource.getRepository(Produtor);
-  const producersList = await producerRepo.find();
+const requestReadpropertysList = async (): Promise<IPropertyPublic[]> => {
+  const propertyRepo: Repository<Propriedade> = AppDataSource.getRepository(Propriedade);
+  const propertysList = await propertyRepo.find();
 
-  return producerListPublicSchema.parse(producersList);
+  return propertyListPublicSchema.parse(propertysList);
 };
 
-export { requestCreateProducer, requestReadProducersList };
+export { requestCreateproperty, requestReadpropertysList };
