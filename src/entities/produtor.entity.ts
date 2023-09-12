@@ -1,5 +1,4 @@
 import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
-import Propriedade from "./propriedade.entity";
 import Usuario from "./usuario.entity";
 
 @Entity("produtor")

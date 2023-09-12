@@ -14,6 +14,9 @@ class Usuario {
   @Column({ type: "varchar", length: 120 })
   senhaUsuario: string;
 
+  @Column({ type: "boolean", default: false })
+  admin: boolean;
+
   @OneToMany(() => Produtor, (produtor) => produtor.usuario)
   produtores: Produtor[];
 

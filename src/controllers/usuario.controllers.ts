@@ -1,24 +1,26 @@
 import { Request, Response } from "express";
-import Usuario from "../entities/index";
+import { IUserLog, IUserRegister } from "../interfaces/usuario.interfaces";
+import { requestCreateUser, requestReadUsersList } from "../services/usuario.services";
+import { logUser } from "../services/log.services";
 
 const sessionLogUser = async (req: Request, res: Response): Promise<Response> => {
-  const payload: IUsuarioLog = res.locals.data;
-  const token = await logUsuario(payload);
+  const payload: IUserLog = res.locals.data;
+  const token = await logUser(payload);
 
   return res.status(200).json({ token });
 };
 
-const createUsuario = async (req: Request, res: Response): Promise<Response> => {
-  const payload: IUsuarioRegister = res.locals.data;
-  const usuario = await requestCreateUsuario(payload);
+const createUser = async (req: Request, res: Response): Promise<Response> => {
+  const payload: IUserRegister = res.locals.data;
+  const user = await requestCreateUser(payload);
 
-  return res.status(201).json(usuario);
+  return res.status(201).json(user);
 };
 
-const getUsuarioList = async (req: Request, res: Response): Promise<Response> => {
-  const usuarioList = await requestReadUsuarioList();
+const getUserList = async (req: Request, res: Response): Promise<Response> => {
+  const userList = await requestReadUsersList();
 
-  return res.status(200).json(usuarioList);
+  return res.status(200).json(userList);
 };
 
-export { sessionLogUser, createUsuario, getUsuarioList };
+export { sessionLogUser, createUser, getUserList };
