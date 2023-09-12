@@ -1,5 +1,6 @@
-import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import Propriedade from "./propriedade.entity";
+import Usuario from "./usuario.entity";
 
 @Entity("produtor")
 class Produtor {
@@ -9,11 +10,14 @@ class Produtor {
   @Column({ type: "varchar", length: 45 })
   nomeProdutor: string;
 
-  @Column({ type: "integer", length: 11 })
-  cpfProdutor: number;
+  @Column({ type: "varchar", length: 11 })
+  cpfProdutor: string;
 
-  @OneToMany(() => Propriedade, (propriedade) => propriedade.produtor)
-  @JoinColumn()
-  propriedade: Propriedade[];
+  @ManyToOne(() => Usuario, (usuario) => usuario.produtores)
+  usuario: Usuario;
+
+  // @OneToMany(() => Propriedade, (propriedade) => propriedade.produtor)
+  // propriedade: Propriedade[];
 }
+
 export default Produtor;

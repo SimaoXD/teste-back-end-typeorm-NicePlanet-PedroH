@@ -4,4 +4,4 @@ const sessionRouter = Router();
 
 sessionRouter.post("");
 
-export { sessionRouter };
+export default sessionRouter;

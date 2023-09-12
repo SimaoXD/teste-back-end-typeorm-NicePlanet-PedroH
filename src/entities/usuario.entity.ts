@@ -1,14 +1,7 @@
-import {
-  BeforeInsert,
-  BeforeUpdate,
-  Column,
-  Entity,
-  JoinColumn,
-  OneToMany,
-  PrimaryGeneratedColumn,
-} from "typeorm";
+import { BeforeInsert, BeforeUpdate, Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 import * as crypt from "bcryptjs";
 import Produtor from "./produtor.entity";
+import Propriedade from "./propriedade.entity";
 
 @Entity("usuario")
 class Usuario {
@@ -22,18 +15,19 @@ class Usuario {
   senhaUsuario: string;
 
   @OneToMany(() => Produtor, (produtor) => produtor.usuario)
-  @JoinColumn()
-  produtor: Produtor;
+  produtores: Produtor[];
 
-  @BeforeInsert
-  @BeforeUpdate
-  verifyPass(){
+  @OneToMany(() => Propriedade, (propriedade) => propriedade.usuario)
+  propriedades: Propriedade[];
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  verifyPass() {
     const verifyPassHash = crypt.getRounds(this.senhaUsuario);
-    if (!verifyPassHash){
-        this.senhaUsuario = crypt.hashSync(this.senhaUsuario, 12);
+    if (!verifyPassHash) {
+      this.senhaUsuario = crypt.hashSync(this.senhaUsuario, 12);
     }
-}
-@BeforeUpdate()
+  }
 }
 
-export default Usuario
+export default Usuario;

@@ -1,6 +1,8 @@
 import { Router } from "express";
 
-const userRouter = Router();
+const usuarioRouter = Router();
 
-userRouter.post("");
-userRouter.get("");
+usuarioRouter.post("");
+usuarioRouter.get("");
+
+export default usuarioRouter;

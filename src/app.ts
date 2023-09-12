@@ -1,8 +1,10 @@
 import "reflect-metadata";
 import "express-async-errors";
 import express from "express";
-import { usuarioRouter, sessionRouter } from "./routers";
+
 import { handleErrors } from "./errors/AppError";
+import sessionRouter from "./routers/session.routers";
+import usuarioRouter from "./routers/usuario.routers";
 
 const app = express();
 
