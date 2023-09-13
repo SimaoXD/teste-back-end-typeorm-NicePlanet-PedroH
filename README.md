@@ -66,9 +66,8 @@ Copy code
 
 # Usuários (Stakeholders)
 
-- POST /usuario: Cadastra um novo stakeholder
-- GET /usuario: Retorna a lista de stakeholders
-- DELETE /usuario: Deleta um stakeholder específico
+- POST /usuario: Um endpoint POST para registrar um usuário após verificar os dados enviados.
+- GET /usuario: Um endpoint GET para recuperar uma lista de usuários, protegido por autenticação e autorização.
 
 # Login
 
@@ -76,5 +75,10 @@ Copy code
 
 # Produtor
 
-- POST /produtor: Cadastra um produtor
-- DELETE /produtor/:id: Deleta um produtor pelo ID
+- POST /produtor: Um endpoint POST para criar um produtor após verificar os dados enviados.
+- GET /produtor/:id: Um endpoint GET para recuperar detalhes de um produtor específico após verificar se o produtor existe.
+
+# Propriedade:
+
+- POST /propriedade: Um endpoint POST para criar uma propriedade após verificar os dados enviados.
+- GET /propriedade/:id: Um endpoint GET para recuperar uma lista de propriedades.
