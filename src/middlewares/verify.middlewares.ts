@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { Repository } from "typeorm";
-import AppDataSource from "../database/data-source";
+import AppDataSource from "../data-source";
 import { Produtor, Usuario } from "../entities";
 import { NextFunction, Request, Response } from "express";
 import { ZodTypeAny } from "zod";

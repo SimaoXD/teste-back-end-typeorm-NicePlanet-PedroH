@@ -4,7 +4,7 @@ import * as jwt from "jsonwebtoken";
 import { Repository } from "typeorm";
 import { IUserLog } from "../interfaces/usuario.interfaces";
 import { Usuario } from "../entities";
-import AppDataSource from "../database/data-source";
+import AppDataSource from "../data-source";
 import AppError from "../errors/AppError";
 
 const logUser = async (payload: IUserLog): Promise<String> => {

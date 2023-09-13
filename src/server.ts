@@ -2,7 +2,6 @@ import "reflect-metadata";
 import express from "express";
 import cors from "cors";
 import routers from "./routers/index";
-import AppDataSource from "./database/data-source";
 
 const app = express();
 
@@ -12,9 +11,6 @@ app.use(express.json());
 
 app.use(routers);
 
-AppDataSource.initialize().then(async () => {
-  console.log("Database OK");
-  app.listen(3306, () => {
-    console.log("Server started on port 3306");
-  });
+app.listen(process.env.PORT, () => {
+  console.log(`Server started on port ${process.env.PORT}`);
 });

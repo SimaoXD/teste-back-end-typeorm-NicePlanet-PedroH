@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import AppDataSource from "../database/data-source";
+import AppDataSource from "../data-source";
 import { Propriedade } from "../entities";
 
 import { propertyDataPublicSchema, propertyListPublicSchema } from "../schemas/propriedade.schema";
@@ -7,7 +7,7 @@ import { IPropertyPublic, IPropertyRegister } from "../interfaces/propriedade.in
 
 const requestCreateproperty = async (payload: IPropertyRegister): Promise<IPropertyPublic> => {
   const propertyRepository: Repository<Propriedade> = AppDataSource.getRepository(Propriedade);
-  const property: Propriedade = propertyRepository.create({ ...payload });
+  const property: Propriedade = propertyRepository.create({});
   const save = await propertyRepository.save(property);
   const propertyResponse: IPropertyPublic = propertyDataPublicSchema.parse(property);
 

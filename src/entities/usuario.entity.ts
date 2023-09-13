@@ -20,7 +20,7 @@ class Usuario {
   @OneToMany(() => Produtor, (produtor) => produtor.usuario)
   produtores: Produtor[];
 
-  @OneToMany(() => Propriedade, (propriedade) => propriedade.usuario)
+  @OneToMany(() => Propriedade, (propriedade) => propriedade.usuarios)
   propriedades: Propriedade[];
 
   @BeforeInsert()

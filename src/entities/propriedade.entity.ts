@@ -9,9 +9,8 @@ class Propriedade {
   @Column({ type: "varchar", length: 45 })
   nomePropriedade: string;
 
-  @Column({ type: "integer", length: 11 })
-  cadastroRural: number;
-  usuario: any;
+  @Column({ type: "varchar", length: 11 })
+  cadastroRural: string;
 
   @ManyToOne(() => Usuario, (usuario) => usuario.propriedades)
   usuarios: Usuario;
