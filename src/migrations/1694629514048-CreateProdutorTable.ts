@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class CreateProdutorTable1694487775000 implements MigrationInterface {
+export class CreateProdutorTable1694629514048 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -10,6 +10,7 @@ export class CreateProdutorTable1694487775000 implements MigrationInterface {
             name: "idProdutor",
             type: "int",
             isPrimary: true,
+            isGenerated: true, // Adicionado
             generationStrategy: "increment",
           },
           {
@@ -20,13 +21,15 @@ export class CreateProdutorTable1694487775000 implements MigrationInterface {
           },
           {
             name: "cpfProdutor",
-            type: "Number",
-            length: "11",
+            type: "int", // Corrigido de 'Number' para 'int'
             isNullable: false,
           },
         ],
       })
     );
   }
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable("produtores");
+  }
 }

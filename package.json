@@ -31,7 +31,11 @@
   "scripts": {
     "build": "tsc",
     "dev:server": "ts-node-dev src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+    "typeorm": "typeorm-ts-node-commonjs -d src/ormconfig.ts",
+    "typeorm:migrate": "npm typeorm migration:run",
+    "typeorm:generate": "npm typeorm migration:generate src/migrations/Migration --timestamp",
+    "typeorm:revert": "npm typeorm migration:revert"
+  }
+   
  }
 
-}
