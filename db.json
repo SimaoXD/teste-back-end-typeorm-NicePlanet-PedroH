@@ -1,5 +1,17 @@
 {
-    "usuario": [],
-    "produtor": [],
+    "usuario": [
+      {
+        "id": 1,
+        "nomeUsuario": "Pedro",
+        "senhaUsuario": "12344657"
+      }
+    ],
+    "produtor": [
+      {
+        "id": 1,
+        "nomeProdutor": "Pedro",
+        "cpfProdutor": "12344657"
+      }
+    ],
     "propriedade": []
   }

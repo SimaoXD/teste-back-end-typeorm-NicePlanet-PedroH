@@ -75,10 +75,10 @@ Copy code
 
 # Produtor
 
-- POST /produtor: Um endpoint POST para criar um produtor após verificar os dados enviados.
-- GET /produtor/:id: Um endpoint GET para recuperar detalhes de um produtor específico após verificar se o produtor existe.
+- POST /usuarios/produtores: Um endpoint POST para criar um produtor após verificar os dados enviados.
+- GET /usuarios/produtores:id: Um endpoint GET para recuperar detalhes de um produtor específico após verificar se o produtor existe.
 
 # Propriedade:
 
-- POST /propriedade: Um endpoint POST para criar uma propriedade após verificar os dados enviados.
-- GET /propriedade/:id: Um endpoint GET para recuperar uma lista de propriedades.
+- POST usuarios/propriedades: Um endpoint POST para criar uma propriedade após verificar os dados enviados.
+- GET usuarios/propriedade/:id: Um endpoint GET para recuperar uma lista de propriedades.
