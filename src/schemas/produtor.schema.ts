@@ -8,8 +8,6 @@ const producerDataPublicSchema = z.object({
 
 const producerListPublicSchema = producerDataPublicSchema.extend({}).array();
 
-const producerDataRegisterSchema = producerDataPublicSchema.omit({ idProdutor: true, nomeProdutor: true }).extend({
-  cpfProdutor: z.string().max(120),
-});
+const producerDataRegisterSchema = producerDataPublicSchema.omit({ idProdutor: true });
 
 export { producerDataPublicSchema, producerDataRegisterSchema, producerListPublicSchema };

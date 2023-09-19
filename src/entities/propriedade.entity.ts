@@ -1,7 +1,7 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 import Usuario from "./usuario.entity";
 
-@Entity("propriedade")
+@Entity("propriedades")
 class Propriedade {
   @PrimaryGeneratedColumn("increment")
   idPropriedade: number;

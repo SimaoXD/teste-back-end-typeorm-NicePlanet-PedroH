@@ -3,7 +3,7 @@ import * as crypt from "bcryptjs";
 import Produtor from "./produtor.entity";
 import Propriedade from "./propriedade.entity";
 
-@Entity("usuario")
+@Entity("usuarios")
 class Usuario {
   @PrimaryGeneratedColumn("increment")
   idUsuario: number;

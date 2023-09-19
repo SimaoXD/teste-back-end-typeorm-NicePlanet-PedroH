@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import AppDataSource from "../data-source";
+import AppDataSource from "../ormconfig";
 import { Produtor } from "../entities";
 import { IProducerPublic, IProducerRegister } from "../interfaces/produtor.interfaces";
 import { producerDataPublicSchema, producerListPublicSchema } from "../schemas/produtor.schema";

@@ -10,10 +10,10 @@ import { propertyDataRegisterSchema } from "../schemas/propriedade.schema";
 
 const router = Router();
 
-router.post("/usuario", verifyDataBody(userDataRegisterSchema), createUser);
-router.get("/usuario", verifyTokenUser, verifyUserAdmin, getUserList);
+router.post("", verifyDataBody(userDataRegisterSchema), createUser);
+router.get("", verifyTokenUser, verifyUserAdmin, getUserList);
 
-router.post("/produtor", verifyDataBody(producerDataRegisterSchema), createProducer);
+router.post("/produtores", verifyDataBody(producerDataRegisterSchema), createProducer);
 router.get("/produtor/:id", verifyProducerExists, getProducerList);
 
 router.post("/propriedade", verifyDataBody(propertyDataRegisterSchema), createProperty);

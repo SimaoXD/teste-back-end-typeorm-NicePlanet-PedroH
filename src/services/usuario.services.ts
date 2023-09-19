@@ -1,7 +1,7 @@
 import { Repository } from "typeorm";
 import { IUserPublic, IUserRegister } from "../interfaces/usuario.interfaces";
 import { userDataPublicSchema, userListPublicSchema } from "../schemas/usuario.schema";
-import AppDataSource from "../data-source";
+import AppDataSource from "../ormconfig";
 import Usuario from "../entities/usuario.entity";
 
 const requestCreateUser = async (payload: IUserRegister): Promise<IUserPublic> => {

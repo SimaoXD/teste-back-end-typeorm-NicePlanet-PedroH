@@ -1,5 +1,5 @@
 import { Repository } from "typeorm";
-import AppDataSource from "../data-source";
+import AppDataSource from "../ormconfig";
 import { Propriedade } from "../entities";
 
 import { propertyDataPublicSchema, propertyListPublicSchema } from "../schemas/propriedade.schema";

@@ -1,16 +1,25 @@
-import "reflect-metadata";
-import express from "express";
-import cors from "cors";
-import routers from "./routers/index";
+// import "reflect-metadata";
+// import express from "express";
+// import cors from "cors";
+// import routers from "./routers/index";
 
-const app = express();
+import app from "./app";
+import ormconfig from "./ormconfig";
 
-app.use(cors());
+// const app = express();
 
-app.use(express.json());
+// app.use(cors());
 
-app.use(routers);
+// app.use(express.json());
 
-app.listen(process.env.PORT, () => {
-  console.log(`Server started on port ${process.env.PORT}`);
-});
+// app.use(routers);
+ormconfig
+  .initialize()
+  .then(() => {
+    app.listen(process.env.PORT, () => {
+      console.log(`Server started on port ${process.env.PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log("server not started");
+  });

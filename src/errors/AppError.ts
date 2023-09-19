@@ -21,7 +21,7 @@ export const handleErrors = (err: Error, req: Request, res: Response, next: Next
   }
   console.log(err);
   return res.status(500).json({
-    message: "User schedule to this real estate at this date and time already exists",
+    message: "internal server error",
   });
 };
 

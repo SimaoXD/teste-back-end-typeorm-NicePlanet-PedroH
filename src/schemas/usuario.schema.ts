@@ -9,7 +9,7 @@ const userDataPublicSchema = z.object({
 
 const userListPublicSchema = userDataPublicSchema.extend({}).array();
 
-const userDataRegisterSchema = userDataPublicSchema.omit({ idUsuario: true, nomeUsuario: true }).extend({
+const userDataRegisterSchema = userDataPublicSchema.omit({ idUsuario: true }).extend({
   senhaUsuario: z.string().max(120),
 });
 

@@ -10,7 +10,7 @@ export class CreateProdutorTable1694629514048 implements MigrationInterface {
             name: "idProdutor",
             type: "int",
             isPrimary: true,
-            isGenerated: true, // Adicionado
+            isGenerated: true,
             generationStrategy: "increment",
           },
           {
@@ -21,7 +21,7 @@ export class CreateProdutorTable1694629514048 implements MigrationInterface {
           },
           {
             name: "cpfProdutor",
-            type: "int", // Corrigido de 'Number' para 'int'
+            type: "int",
             isNullable: false,
           },
         ],
