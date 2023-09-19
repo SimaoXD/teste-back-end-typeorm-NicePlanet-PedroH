@@ -8,8 +8,6 @@ const propertyDataPublicSchema = z.object({
 
 const propertyListPublicSchema = propertyDataPublicSchema.extend({}).array();
 
-const propertyDataRegisterSchema = propertyDataPublicSchema.omit({ idPropriedade: true, nomePropriedade: true }).extend({
-  cadastroRural: z.string().max(120),
-});
+const propertyDataRegisterSchema = propertyDataPublicSchema.omit({ idPropriedade: true });
 
 export { propertyDataPublicSchema, propertyDataRegisterSchema, propertyListPublicSchema };

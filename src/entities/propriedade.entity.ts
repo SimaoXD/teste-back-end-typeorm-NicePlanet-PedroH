@@ -13,7 +13,7 @@ class Propriedade {
   cadastroRural: string;
 
   @ManyToOne(() => Usuario, (usuario) => usuario.propriedades)
-  usuarios: Usuario;
+  usuario: Usuario;
 }
 
 // @ManyToOne(() => Produtor, (produtor) => produtor.propriedade)

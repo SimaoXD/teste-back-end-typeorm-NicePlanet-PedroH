@@ -7,7 +7,7 @@ import { IPropertyPublic, IPropertyRegister } from "../interfaces/propriedade.in
 
 const requestCreateproperty = async (payload: IPropertyRegister): Promise<IPropertyPublic> => {
   const propertyRepository: Repository<Propriedade> = AppDataSource.getRepository(Propriedade);
-  const property: Propriedade = propertyRepository.create({});
+  const property: Propriedade = propertyRepository.create({ ...payload });
   const save = await propertyRepository.save(property);
   const propertyResponse: IPropertyPublic = propertyDataPublicSchema.parse(property);
 

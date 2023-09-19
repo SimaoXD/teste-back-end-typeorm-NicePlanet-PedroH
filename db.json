@@ -13,5 +13,13 @@
         "cpfProdutor": "12344657"
       }
     ],
-    "propriedade": []
+    "propriedade": [
+        {
+        "id": 1,
+        "nomeProdutor": "Pedro",
+        "cadastroRural": "12344657"
+    }
+       
+        
+    ]
   }

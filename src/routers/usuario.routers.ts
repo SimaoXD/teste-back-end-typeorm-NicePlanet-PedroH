@@ -16,7 +16,7 @@ router.get("", verifyTokenUser, verifyUserAdmin, getUserList);
 router.post("/produtores", verifyDataBody(producerDataRegisterSchema), createProducer);
 router.get("/produtor/:id", verifyProducerExists, getProducerList);
 
-router.post("/propriedade", verifyDataBody(propertyDataRegisterSchema), createProperty);
-router.get("/propriedade/:id", getPropertyList);
+router.post("/propriedades", verifyDataBody(propertyDataRegisterSchema), createProperty);
+router.get("/propriedades/:id", getPropertyList);
 
 export default router;
