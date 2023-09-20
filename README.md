@@ -55,9 +55,11 @@ $ npm run dev:server
 
 # Para compilar o TypeScript
 
-$ npm run build
+$ npm run dev:server
 
 # Para rodar migrações do TypeORM
+
+npm run typeorm migration:run -- -d .\src\ormconfig.ts
 
 $ npm run typeorm migration:run
 🚩 Rotas da Aplicação
